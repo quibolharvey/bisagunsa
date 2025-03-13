@@ -1,88 +1,171 @@
 /* public/css/style.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    color: #333;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #e6e9f0, #ffffff);
+    color: #4a4a4a;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    font-family: 'Poppins';
 }
 
 h1 {
     color: #2c3e50;
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 a {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #3498db;
-    color: white;
+    padding: 10px 20px;
+    background: #3498db;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 a:hover {
-    background-color: #2980b9;
+    background: #2980b9;
+    transform: translateY(-2px);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 }
 
 th, td {
-    padding: 12px;
+    padding: 16px;
     text-align: left;
+    transition: background-color 0.3s ease;
+    font-size: 0.95em;
 }
 
 th {
     background-color: #3498db;
     color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 td {
     background-color: #f9f9f9;
 }
 
+td:hover {
+    background-color: #f0f0f0;
+}
+
 button {
-    background-color: #e74c3c;
-    color: white;
+    background: #e74c3c;
+    color: #fff;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #c0392b;
+    background: #c0392b;
+    transform: translateY(-2px);
 }
 
 form {
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 5px;
     border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
 }
 
 form button {
-    background-color: #3498db;
+    background: #3498db;
     color: white;
-    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    background-color: #2980b9;
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Accessibility and User Experience Enhancements */
+a:focus, button:focus, form input:focus, form textarea:focus {
+    outline: 2px dashed #3498db;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    table, form {
+        width: 100%;
+    }
+
+    form {
+        padding: 15px;
+    }
+    body{
+        font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+    }
 }

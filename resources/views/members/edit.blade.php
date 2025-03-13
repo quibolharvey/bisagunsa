@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Edit Member</title>
-    <style>
-        body{
-            background-color: rgb(139, 175, 206);
-        }
-    </style>
 </head>
 <body>
     <h1>Edit Member</h1>
@@ -28,9 +23,9 @@
         <label for="membership_plan">Membership Plan:</label>
         <input type="text" name="membership_plan" value="{{ $member->membership_plan }}" required>
 
-        <button type="submit">Update Member</button>
+        <button type="submit">Update Name</button>
     </form>
 
-    <a href="{{ route('members.index') }}">Back to Members</a>
+    <a href="{{ route('members.index') }}">Back</a>
 </body>
 </html>

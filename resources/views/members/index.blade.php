@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Members List</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-        body{
-            background-color: rgb(139, 175, 206);
+        div{
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            gap: 1px;
+        }
+        .edit{
+            text-align: center;
+            background-color: green;
+        }
+        .edit:hover{
+            background-color: rgb(117, 188, 117);
+        }
+        .delete{
+            background-color: red;
+        }
+        .delete:hover{
+            background-color: rgb(209, 135, 135);
         }
     </style>
 </head>
 <body>
-    <h1>Members</h1>
-    <a href="{{ route('home') }}">Back</a>
-    <a href="{{ route('members.create') }}">Add New Member</a>
+    <h1>Members List</h1>
+    <div>
+    <a class="back" href="{{ route('home') }}">Back</a>
+    <a class="add" href="{{ route('members.create') }}">Join</a>
+</div>
 
     <table border="1">
         <thead>
@@ -34,11 +53,12 @@
                 <td>{{ $member->phone }}</td>
                 <td>{{ $member->membership_plan }}</td>
                 <td>
-                    <a href="{{ route('members.edit', $member->id) }}">Edit</a>
+
                     <form action="{{ route('members.destroy', $member->id) }}" method="POST">
+                        <a class="edit" href="{{ route('members.edit', $member->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Delete</button>
+                        <button class="delete" type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
